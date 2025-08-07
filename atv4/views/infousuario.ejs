@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infromacoes de usuarios</title>
+</head>
+<body>
+    <%- include('partials/menu') %>
+    <div>
+        <h1>Detalhes do Usuário</h1>
+        <% if (usuario) { %>
+            <div>
+                <p><strong>Nome:</strong> <%= usuario.nome %></p>
+                <p><strong>Email:</strong> <%= usuario.email %></p>
+                <p><strong>Senha:</strong> <%= usuario.senha %></p>
+                <p><strong>Curso:</strong> <%= usuario.curso %></p>
+                <p><strong>Idade:</strong> <%= usuario.idade %></p>
+            </div>
+        <% } else { %>
+            <p>Usuário não encontrado.</p>
+        <% } %>
+        <a href="/usuarios">Voltar para a lista de usuários</a>
+    </div>
+</body>
+</html>

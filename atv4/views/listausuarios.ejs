@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+</head>
+<body>
+    <%- include('partials/menu') %>
+    <div>
+        <h1>Usuários Cadastrados</h1>
+        <% if (usuarios && usuarios.length > 0) { %>
+            <ul>
+                <% usuarios.forEach(function(usuario) { %>
+                    <li>
+                        <a href="/usuarios/<%= encodeURIComponent(usuario.email) %>">
+                            <%= usuario.email %>
+                        </a>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>Nenhum usuário cadastrado ainda.</p>
+        <% } %>
+    </div>
+</body>
+</html>
